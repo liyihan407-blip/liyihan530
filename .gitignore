@@ -1,0 +1,12 @@
+node_modules/
+server.out.txt
+server.err.txt
+uploads/*
+!uploads/.gitkeep
+tmp-data/
+tmp-data-2/
+tmp-uploads/
+tmp-uploads-2/
+lt.out.txt
+lt.err.txt
+data/site.json

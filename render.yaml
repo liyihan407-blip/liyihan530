@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: couple-space
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DATA_DIR
+        value: /opt/render/project/src/storage/data
+      - key: UPLOADS_DIR
+        value: /opt/render/project/src/storage/uploads
+    disk:
+      name: couple-space-storage
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 1

@@ -1,0 +1,12 @@
+{
+  "name": "couple-space",
+  "version": "1.0.0",
+  "description": "Sweet couple website with public gallery and protected admin editing.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
