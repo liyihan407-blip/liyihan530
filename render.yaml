@@ -2,6 +2,8 @@ services:
   - type: web
     name: couple-space
     runtime: node
+    branch: main
+    plan: starter
     buildCommand: npm install
     startCommand: npm start
     autoDeploy: true
